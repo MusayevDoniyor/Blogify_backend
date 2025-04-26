@@ -211,8 +211,3 @@ CREATE TABLE comments (
 - Har bir table orasida **relationship** bor (Foreign key bilan).
 
 ---
-
-✅ **Toza va tayyor MWP.**  
-✅ **Darrov kod yozishga o'tsang bo'ladi.**
-
----
