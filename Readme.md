@@ -1,10 +1,4 @@
-**Modellar (code) kerak emas**, **faqat toza `.md` formatda**  
-✅ Full **folder struktura**,  
-✅ Full **API routes**,  
-✅ Full **Database jadvallar**  
-✅ Oddiy, tushunarli MWP sifatida.
-
-Mana senga tayyor **Markdown (.md)** formatda:
+**Blogify**
 
 ---
 
