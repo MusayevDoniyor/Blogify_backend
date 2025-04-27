@@ -1,8 +1,9 @@
-import Client from "pg";
+import { Pool } from "pg";
 import dotenv from "dotenv";
+
 dotenv.config();
 
-const client = new Client.Pool({
+const client = new Pool({
   user: process.env.PSQL_USER,
   password: process.env.PSQL_PASSWORD,
   host: process.env.PSQL_HOST,
@@ -16,7 +17,7 @@ client
     console.log("✅ Connected to PostgreSQL");
   })
   .catch((err) => {
-    console.log("❌ Error connecting to database:", err.message);
+    console.error("❌ Error connecting to PostgreSQL:", err.message);
     process.exit(1);
   });
 
