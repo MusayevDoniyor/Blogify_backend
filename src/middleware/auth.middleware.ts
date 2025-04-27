@@ -2,6 +2,11 @@ import { Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
 import { responser } from "../utils/helper.js";
 import { IRequest } from "../types/express.types.js";
+import { verifyToken } from "../utils/jwt.js";
+
+interface UserPayload {
+  id: number;
+}
 
 export const authMiddleware = async (
   req: IRequest,
@@ -15,13 +20,14 @@ export const authMiddleware = async (
   }
 
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET!) as {
-      id: number;
-    };
+    const decoded = verifyToken(token) as UserPayload;
 
     req.user = decoded;
     next();
-  } catch (error) {
-    return responser({ res, status: 401, error: "Invalid token" });
+  } catch (error: any) {
+    if (error instanceof jwt.JsonWebTokenError) {
+      return responser({ res, status: 401, error: "Invalid token" });
+    }
+    return responser({ res, status: 500, error: error.message });
   }
 };

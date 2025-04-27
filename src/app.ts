@@ -3,8 +3,10 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import helmet from "helmet";
 import morgan from "morgan";
-import UserRoutes from "./modules/users/user.routes.js";
 import { responser } from "./utils/helper.js";
+
+import UserRoutes from "./modules/users/user.routes.js";
+import BlogRoutes from "./modules/blogs/blog.routes.js";
 
 const app = express();
 
@@ -15,6 +17,8 @@ app.use(morgan("dev"));
 app.use(cookieParser());
 
 app.use("/api/v1/users", UserRoutes);
+
+app.use("/api/v1/blogs", BlogRoutes);
 
 app.use(
   (
