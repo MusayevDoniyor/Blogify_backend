@@ -8,6 +8,7 @@ import { responser } from "./utils/helper.js";
 import UserRoutes from "./modules/users/user.routes.js";
 import BlogRoutes from "./modules/blogs/blog.routes.js";
 import PostRoutes from "./modules/posts/post.routes.js";
+import CommentRoutes from "./modules/comments/comment.routes.js";
 
 const app = express();
 
@@ -22,6 +23,8 @@ app.use("/api/v1/users", UserRoutes);
 app.use("/api/v1/blogs", BlogRoutes);
 
 app.use("/api/v1/posts", PostRoutes);
+
+app.use("/api/v1/comments", CommentRoutes);
 
 app.use(
   (
