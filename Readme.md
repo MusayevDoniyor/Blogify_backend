@@ -153,7 +153,7 @@ CREATE TABLE comments (
 | GET    | `/api/v1/blogs/get-my-blogs`        | Foydalanuvchi yaratgan bloglar     |
 | GET    | `/api/v1/blogs/get-my-joined-blogs` | Foydalanuvchi a'zo bo'lgan bloglar |
 | GET    | `/api/v1/blogs/get-blog-info/:id`   | Blog haqida ma'lumot (id bo'yicha) |
-| PATCH  | `/api/v1/blogs/update/:id`          | Blogni update qilish (faqat owner) |
+| PUT    | `/api/v1/blogs/update/:id`          | Blogni update qilish (faqat owner) |
 | DELETE | `/api/v1/blogs/delete/:id`          | Blogni o'chirish (faqat owner)     |
 | GET    | `/api/v1/blogs/search?title=query`  | Bloglarni nomi bo'yicha qidirish   |
 | POST   | `/api/v1/blogs/join-blog/:id`       | Blogga a'zo bo'lish                |
@@ -169,7 +169,7 @@ CREATE TABLE comments (
 | POST   | `/api/v1/posts/create`               | Post yaratish (blog owner)                 |
 | GET    | `/api/v1/posts/get-all/:blogId`      | Blogga tegishli barcha postlar             |
 | GET    | `/api/v1/posts/get-by-id/:postId`    | Postni ko'rish (view_count +1)             |
-| PATCH  | `/api/v1/posts/update/:postId`       | Postni update qilish (blog owner)          |
+| PUT    | `/api/v1/posts/update/:postId`       | Postni update qilish (blog owner)          |
 | DELETE | `/api/v1/posts/delete/:postId`       | Postni o'chirish (blog owner)              |
 | GET    | `/api/v1/posts/sort-by-date/:blogId` | Blogdagi postlarni sanaga qarab tartiblash |
 | GET    | `/api/v1/posts/:postId/get-comments` | Postga yozilgan commentlarni olish         |
@@ -181,7 +181,7 @@ CREATE TABLE comments (
 | Method | Endpoint                             | Description             |
 | :----- | :----------------------------------- | :---------------------- |
 | POST   | `/api/v1/comments/create`            | Comment yozish          |
-| PATCH  | `/api/v1/comments/update/:commentId` | Commentni update qilish |
+| PUT    | `/api/v1/comments/update/:commentId` | Commentni update qilish |
 | DELETE | `/api/v1/comments/delete/:commentId` | Commentni o'chirish     |
 
 ---
