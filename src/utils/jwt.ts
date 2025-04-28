@@ -3,7 +3,6 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const access_token_secret = process.env.JWT_SECRET as string;
-console.log(access_token_secret);
 
 export const signToken = (payload: object) => {
   return jwt.sign(payload, access_token_secret, {
