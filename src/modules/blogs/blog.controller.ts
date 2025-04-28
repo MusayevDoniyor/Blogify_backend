@@ -15,7 +15,6 @@ import {
 } from "./blog.service.js";
 import client from "../../config/db.config.js";
 import { checkIsMemberQuery } from "./blog.sql.js";
-import { IBlog } from "./blog.types.js";
 
 export const createBlog = async (req: IRequest, res: Response) => {
   try {

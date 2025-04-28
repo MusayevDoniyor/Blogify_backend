@@ -24,6 +24,7 @@ CREATE TABLE blog_members (
 CREATE TABLE posts (
   id SERIAL PRIMARY KEY,
   blog_id INTEGER REFERENCES blogs(id) ON DELETE CASCADE,
+  owner_id: INTEGER REFERENCES users(id) ON DELETE CASCADE
   title VARCHAR(255) NOT NULL,
   content TEXT NOT NULL,
   view_count INTEGER DEFAULT 0,
